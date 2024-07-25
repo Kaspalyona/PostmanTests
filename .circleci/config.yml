@@ -31,7 +31,7 @@ jobs:
       - run:
           name: Run Postman collection
           command: |
-            COLLECTION_PATH="Postman Collections/ClickUp_Api_tests.json"
+            COLLECTION_PATH="Postman Collections/Click up.json"
             if [ ! -f "$COLLECTION_PATH" ]; then
               echo "Collection file $COLLECTION_PATH does not exist"
               exit 1
