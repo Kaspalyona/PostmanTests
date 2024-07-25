@@ -14,7 +14,7 @@ jobs:
       - run:
           name: Run Postman Collection with Newman
           command: |
-            newman run "Postman Collections/Click up.json" --reporters cli,html --reporter-html-export /Users/alyonakasparevych/Documents/ClickUpNewmanReport/report.html
+            newman run "Postman Collections/Click up.json" --reporters cli,html --reporter-html-export results/report.html
       - store_artifacts:
           path: results
           destination: newman-results
