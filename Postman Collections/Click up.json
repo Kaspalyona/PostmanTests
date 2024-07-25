@@ -1197,6 +1197,22 @@
 						},
 						{
 							"name": "Update goal",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "0176ae97-dcc4-495b-9036-61fe3971a448",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "6d99e8a3-231e-4ef7-b675-d216d5cf166a",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -1236,21 +1252,9 @@
 							"name": "Create key result",
 							"event": [
 								{
-									"listen": "prerequest",
-									"script": {
-										"exec": [
-											"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {",
-											"    console.log(response.json());",
-											"});"
-										],
-										"type": "text/javascript",
-										"packages": {},
-										"id": "57c74b5d-a18c-4be2-b3c9-ac682950cfd1"
-									}
-								},
-								{
 									"listen": "test",
 									"script": {
+										"id": "d4192931-dbfa-4597-9287-c002029ddfa8",
 										"exec": [
 											"var responceData = pm.response.json();",
 											"var keyId = responceData.key_result.id;",
@@ -1262,8 +1266,20 @@
 											""
 										],
 										"type": "text/javascript",
-										"packages": {},
-										"id": "e4791d25-a4fe-485a-8cfc-2bdca886db59"
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "fec95450-6edf-4601-b91f-92aeeba41fc7",
+										"exec": [
+											"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {",
+											"    console.log(response.json());",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -1414,11 +1430,12 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{api_click_up}}v2/key_result/{{key_result_id_click_up}}",
+									"raw": "{{api_click_up}}/v2/key_result/{{key_result_id_click_up}}",
 									"host": [
-										"{{api_click_up}}v2"
+										"{{api_click_up}}"
 									],
 									"path": [
+										"v2",
 										"key_result",
 										"{{key_result_id_click_up}}"
 									]
@@ -1584,8 +1601,8 @@
 											"var goal = responseData.goal;",
 											"",
 											"",
-											"pm.test(\"Status code is 401\", function () {",
-											"    pm.response.to.have.status(403);",
+											"pm.test(\"Status code is 500\", function () {",
+											"    pm.response.to.have.status(500);",
 											"});",
 											""
 										],
@@ -1598,11 +1615,11 @@
 									"script": {
 										"id": "23148ea8-a577-4233-a59e-5263c8aa971d",
 										"exec": [
-											"// Перевірка на відправку з пустим полем, змінюєм в тілі значення name на null",
-											"var request = pm.request;",
-											"var requestBody = JSON.parse(request.body.raw);",
-											"requestBody.name = null; ",
-											"pm.request.body.raw = JSON.stringify(requestBody);",
+											"// // Перевірка на відправку з пустим полем, змінюєм в тілі значення name на null",
+											"// var request = pm.request;",
+											"// var requestBody = JSON.parse(request.body.raw);",
+											"// requestBody.name = null; ",
+											"// pm.request.body.raw = JSON.stringify(requestBody);",
 											""
 										],
 										"type": "text/javascript",
@@ -1619,7 +1636,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"{{$randomWords}}\",\n    \"due_date\": 1568036964079,\n    \"description\": \"Goal Description\",\n    \"multiple_owners\": false,\n    \"owners\":[],\n    \"color\": \"#32a852\"\n  }",
+									"raw": "{\n    \"due_date\": 1568036964079,\n    \"description\": \"Goal Description\",\n    \"multiple_owners\": false,\n    \"owners\":[],\n    \"color\": \"#32a852\"\n  }",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1689,56 +1706,56 @@
 	],
 	"variable": [
 		{
-			"id": "a9e9f088-4122-4b7b-892a-426f5aa80384",
+			"id": "878ce9a8-8e24-423d-b7f5-8d9c64be4452",
 			"key": "api_click_up",
 			"value": "https://api.clickup.com/api"
 		},
 		{
-			"id": "14c29fd7-466c-44c6-8d9e-7af7c6fb3cd0",
+			"id": "541d2b08-d2bb-4866-aeeb-998f7bd12c46",
 			"key": "auth_token_click_up",
 			"value": "pk_50198468_VWZL7JX1TFSHVP9RFOI70FCRGCAR0OTR"
 		},
 		{
-			"id": "d0ba3e65-243a-43f1-ae0c-550f4cef60c2",
+			"id": "c2828ff4-2798-478b-9083-a54e90d6d71d",
 			"key": "team_id_click_up",
 			"value": "9015750895",
 			"type": "string"
 		},
 		{
-			"id": "9708c798-48af-4cf7-904b-249cc68e0ce1",
+			"id": "3c3f783e-b5f0-4407-aa7e-962d49a27588",
 			"key": "key_result_id_click_up",
 			"value": "e4b6f4a3-489d-4505-b44d-64321e8d44be",
 			"type": "string"
 		},
 		{
-			"id": "d200fbdc-be64-44e8-a034-14f9ce3fe9e5",
+			"id": "0f474475-2995-4baf-87bb-e10f0f99467c",
 			"key": "goal_id_click_up",
 			"value": "a32b0385-b5b3-4299-a442-7d36a8616ee3",
 			"type": "string"
 		},
 		{
-			"id": "9cc4fd7f-50e5-436b-9ff6-8ed9788c6822",
+			"id": "b4e141d6-2b12-49f4-bf73-7d55a26d5a36",
 			"key": "invalid_team_id",
 			"value": "hello",
 			"type": "string"
 		},
 		{
-			"id": "430fe99f-d3c2-405c-bcfa-0ead674b7975",
+			"id": "3fbcd7c2-3036-4f82-8949-1c36867ebea5",
 			"key": "space_click_up",
 			"value": ""
 		},
 		{
-			"id": "913a938e-c8ff-45bd-8c2a-786dd780e0c7",
+			"id": "5510af1c-5b2a-4237-b9d5-1028425e7733",
 			"key": "space_id_click_up",
 			"value": ""
 		},
 		{
-			"id": "014faa01-59f7-4afd-99f1-495b6c18b316",
+			"id": "3905af03-0b34-4454-b038-273995a0cfd4",
 			"key": "spaspace_id_click_up",
 			"value": ""
 		},
 		{
-			"id": "5b3b1f5a-06cc-4cc8-b4e7-5a9cf1cd57b8",
+			"id": "dd6790c7-2411-4b2a-9f62-503ca4cb29d7",
 			"key": "space_name_exists",
 			"value": ""
 		}
