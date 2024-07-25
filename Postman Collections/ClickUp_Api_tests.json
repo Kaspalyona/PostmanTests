@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "003876f6-431c-4b12-8c66-458ddfaf3a46",
+		"_postman_id": "6764b4d7-44bd-4042-be68-27df6737d79d",
 		"name": "Click up. Goals",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "22516955-6764b4d7-44bd-4042-be68-27df6737d79d"
 	},
 	"item": [
 		{
@@ -14,7 +15,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "78a4fad4-70d9-439e-a06e-37d68def3820",
+								"id": "77c6809a-d689-49dc-a2be-f2c62a136e0e",
 								"exec": [
 									"let responseData = pm.response.json()",
 									"pm.test(\"Status code is 200\", function () {",
@@ -85,7 +86,8 @@
 									"",
 									"",
 									"var goals = responseData.goals[0];",
-									"pm.collectionVariables.set(\"goal_id_click_up\", goals.id);"
+									"pm.collectionVariables.set(\"goal_id_click_up\", goals.id);",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -94,7 +96,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "20b53ddd-16f2-413a-9f17-61922191686d",
+								"id": "28adb865-4db5-4edd-b2bc-f361f92f2395",
 								"exec": [
 									""
 								],
@@ -103,7 +105,7 @@
 							}
 						}
 					],
-					"id": "9a9cf735-c64c-4408-b0c0-42affe7fc680",
+					"id": "139cdb6e-b716-429b-bafc-47b40617ccf7",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -138,7 +140,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "78a4fad4-70d9-439e-a06e-37d68def3820",
+								"id": "bfaf3c87-0cc0-4215-a3e4-aead8006a5ca",
 								"exec": [
 									"let responseData = pm.response.json()",
 									"",
@@ -239,7 +241,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "20b53ddd-16f2-413a-9f17-61922191686d",
+								"id": "04c66ed0-7d2b-4589-afb6-fd01470042f2",
 								"exec": [
 									""
 								],
@@ -248,7 +250,7 @@
 							}
 						}
 					],
-					"id": "8e18e1f4-8083-4320-92ea-0104a208de63",
+					"id": "6dee7be6-6a9f-423d-b730-65269157cd4c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -282,7 +284,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "78a4fad4-70d9-439e-a06e-37d68def3820",
+								"id": "76e84b81-571f-4620-8cb1-15b1b44c6f97",
 								"exec": [
 									"let responseData = pm.response.json()",
 									"",
@@ -381,7 +383,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "20b53ddd-16f2-413a-9f17-61922191686d",
+								"id": "cde47488-e900-478e-a908-8c110dfdad81",
 								"exec": [
 									""
 								],
@@ -390,7 +392,7 @@
 							}
 						}
 					],
-					"id": "c1def9d9-8da1-46c3-a70c-cb66cdd85498",
+					"id": "f6484274-d899-4c0d-ad22-a7f20d73e141",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -424,7 +426,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8775e017-6484-4105-b51d-e9e2db9237ec",
+								"id": "3862619e-0b86-4a18-b8d3-37ff29041a53",
 								"exec": [
 									"var responseData = pm.response.json();",
 									"var goal = responseData.goal;",
@@ -487,7 +489,7 @@
 							}
 						}
 					],
-					"id": "6aa66c29-a690-4604-a3ff-b1013e21c8cd",
+					"id": "a8525555-abb0-4141-a69e-d3ee948f1512",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -503,7 +505,18 @@
 								}
 							}
 						},
-						"url": "{{api_click_up}}/v2/team/{{team_id_click_up}}/goal"
+						"url": {
+							"raw": "{{api_click_up}}/v2/team/{{team_id_click_up}}/goal",
+							"host": [
+								"{{api_click_up}}"
+							],
+							"path": [
+								"v2",
+								"team",
+								"{{team_id_click_up}}",
+								"goal"
+							]
+						}
 					},
 					"response": []
 				},
@@ -513,7 +526,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "dd04dff6-95a9-4723-b4bc-c8a642db4b80",
+								"id": "3b851436-4038-487c-9ea2-113016ca1c93",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -529,24 +542,35 @@
 							"listen": "prerequest",
 							"script": {
 								"packages": {},
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"id": "870896fa-7efd-4cf4-8418-5782d1dbd661"
 							}
 						}
 					],
-					"id": "f64f15e3-0500-441e-a6da-acf2a4221400",
+					"id": "7e7e488f-1980-40b7-9e43-c56145660079",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{api_click_up}}/v2/goal/{{goal_id_click_up}}"
+						"url": {
+							"raw": "{{api_click_up}}/v2/goal/{{goal_id_click_up}}",
+							"host": [
+								"{{api_click_up}}"
+							],
+							"path": [
+								"v2",
+								"goal",
+								"{{goal_id_click_up}}"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Update goal",
-					"id": "1d0ccc8a-1b44-4c34-bba0-70c8512e4e54",
+					"id": "6de0a685-9839-4b7a-8645-ddc3f5fda685",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -567,7 +591,17 @@
 								}
 							}
 						},
-						"url": "{{api_click_up}}/v2/goal/{{goal_id_click_up}}"
+						"url": {
+							"raw": "{{api_click_up}}/v2/goal/{{goal_id_click_up}}",
+							"host": [
+								"{{api_click_up}}"
+							],
+							"path": [
+								"v2",
+								"goal",
+								"{{goal_id_click_up}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -577,7 +611,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "45fa3d34-d4a8-4cfd-a3f0-81ca7dc4f051",
+								"id": "954e4483-0811-431c-8334-7289fc224ba9",
 								"exec": [
 									"// Присваювати нове значення змінній для колекціїї (якщо ще є цілі)",
 									"//var api_click_up = pm.collectionVariables.get(\"api_click_up\")",
@@ -617,7 +651,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "bab7b2ef-f56b-4775-a7df-754bc94f05d2",
+								"id": "40e69f9e-154e-4a02-b3e2-5bb98d4dca1e",
 								"exec": [
 									""
 								],
@@ -626,7 +660,7 @@
 							}
 						}
 					],
-					"id": "9d72901b-1531-471f-9fb5-3ca1b415274c",
+					"id": "b0b9f131-fefa-423f-9fbf-6458297fffe7",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -638,7 +672,17 @@
 								"value": "application/json"
 							}
 						],
-						"url": "{{api_click_up}}/v2/goal/{{goal_id_click_up}}"
+						"url": {
+							"raw": "{{api_click_up}}/v2/goal/{{goal_id_click_up}}",
+							"host": [
+								"{{api_click_up}}"
+							],
+							"path": [
+								"v2",
+								"goal",
+								"{{goal_id_click_up}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -648,7 +692,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4b4ead94-c476-4ee3-a6c0-89f6e2aaec69",
+								"id": "9ef12cee-6370-40ba-9cc1-c5aad3ce93aa",
 								"exec": [
 									"var responceData = pm.response.json();",
 									"var keyId = responceData.key_result.id;",
@@ -664,7 +708,7 @@
 							}
 						}
 					],
-					"id": "17cb03fb-61f3-48ed-ad09-9d138c9508a1",
+					"id": "4f572591-9550-4e34-948f-0422a8a522ac",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -685,7 +729,18 @@
 								}
 							}
 						},
-						"url": "{{api_click_up}}/v2/goal/{{goal_id_click_up}}/key_result"
+						"url": {
+							"raw": "{{api_click_up}}/v2/goal/{{goal_id_click_up}}/key_result",
+							"host": [
+								"{{api_click_up}}"
+							],
+							"path": [
+								"v2",
+								"goal",
+								"{{goal_id_click_up}}",
+								"key_result"
+							]
+						}
 					},
 					"response": []
 				},
@@ -695,7 +750,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b4ffa9ba-7287-4e31-bc3b-ece318d06312",
+								"id": "bc91df62-d00d-422e-855d-a4c71e2cf06d",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -706,7 +761,7 @@
 							}
 						}
 					],
-					"id": "323a2ebf-325a-4162-8822-a87cd24a6050",
+					"id": "b5d9256c-7244-4734-bffe-11c8736604d9",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -727,7 +782,17 @@
 								}
 							}
 						},
-						"url": "{{api_click_up}}/v2/key_result/{{key_result_id_click_up}}"
+						"url": {
+							"raw": "{{api_click_up}}/v2/key_result/{{key_result_id_click_up}}",
+							"host": [
+								"{{api_click_up}}"
+							],
+							"path": [
+								"v2",
+								"key_result",
+								"{{key_result_id_click_up}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -737,7 +802,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "978bb546-fc8b-4264-bc01-6f16cb3d5b4f",
+								"id": "17656aef-1653-48df-ba14-d46df37ff795",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -782,19 +847,28 @@
 							}
 						}
 					],
-					"id": "74f466b8-7b93-45a5-a236-113a93411c35",
+					"id": "f61e8beb-5898-4fac-94a2-ce032b2dfc9a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "{{api_click_up}}v2/key_result/{key_result_id}"
+						"url": {
+							"raw": "{{api_click_up}}v2/key_result/{key_result_id}",
+							"host": [
+								"{{api_click_up}}v2"
+							],
+							"path": [
+								"key_result",
+								"{key_result_id}"
+							]
+						}
 					},
 					"response": []
 				}
 			],
-			"id": "51f71bff-2369-456d-97ad-086323338673"
+			"id": "57f70cc6-b3f2-482a-b82c-5fd94ca38c4c"
 		},
 		{
 			"name": "Negative tests",
@@ -805,7 +879,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "6b8704d9-12d7-4c88-8fa9-15c4e4071a8a",
+								"id": "961ccd9b-7476-43a8-b745-bb910ff1660f",
 								"exec": [
 									""
 								],
@@ -816,7 +890,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9857bb8c-f5ed-47c5-9f20-cb450f192b42",
+								"id": "ec11801c-c432-4e50-b6d0-4000044fee31",
 								"exec": [
 									"let responceData = pm.response.json()",
 									"pm.test(\"Status code is 401\", function () {",
@@ -830,7 +904,7 @@
 							}
 						}
 					],
-					"id": "dbf41ea3-be23-43c1-ae5f-2315d1311e64",
+					"id": "2e0ff048-bf42-4a1c-a86f-03c5dd11bb2f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -864,7 +938,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8775e017-6484-4105-b51d-e9e2db9237ec",
+								"id": "34aa73eb-3ab9-4103-be67-45c68be5df95",
 								"exec": [
 									"var responseData = pm.response.json();",
 									"var goal = responseData.goal;",
@@ -882,7 +956,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "fb59e108-969c-4614-9180-7f2fcf15fc63",
+								"id": "f6a80c0e-cdbe-42cd-ad37-2d60fda737c3",
 								"exec": [
 									"// Перевірка на відправку з пустим полем, змінюєм в тілі значення name на null",
 									"var request = pm.request;",
@@ -896,7 +970,7 @@
 							}
 						}
 					],
-					"id": "e0dcc74c-0684-4f50-baaf-8d8dfad3a248",
+					"id": "92a34bef-6387-413b-99d8-2d4c99098273",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -912,26 +986,45 @@
 								}
 							}
 						},
-						"url": "{{api_click_up}}/v2/team/{{team_id_click_up}}/goal"
+						"url": {
+							"raw": "{{api_click_up}}/v2/team/{{team_id_click_up}}/goal",
+							"host": [
+								"{{api_click_up}}"
+							],
+							"path": [
+								"v2",
+								"team",
+								"{{team_id_click_up}}",
+								"goal"
+							]
+						}
 					},
 					"response": []
 				}
 			],
-			"id": "6b8f364f-a5eb-489c-aee5-1d56e102210d"
+			"id": "080e2789-9487-4a7c-9397-82bbfdd31fdf"
 		}
 	],
 	"auth": {
 		"type": "apikey",
-		"apikey": {
-			"key": "Authorization",
-			"value": "{{auth_token_click_up}}"
-		}
+		"apikey": [
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{auth_token_click_up}}",
+				"type": "string"
+			}
+		]
 	},
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "ce55840e-d535-445d-9fc3-0151c969f1ca",
+				"id": "81345841-1b23-4fde-9821-cef848704bdc",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -942,7 +1035,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "877f3a82-35d9-4c1d-9247-62c2b43bb272",
+				"id": "9b63cde9-4170-436e-abd9-c8f22686ced3",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -953,33 +1046,40 @@
 	],
 	"variable": [
 		{
+			"id": "c810c0c1-3bf6-4b74-bf21-81797220b7b4",
 			"key": "api_click_up",
 			"value": "https://api.clickup.com/api"
 		},
 		{
+			"id": "96457033-e33e-4ee2-883a-8f22b7f5d488",
 			"key": "auth_token_click_up",
 			"value": "pk_42579647_2H7TDWT119Q33WDAO3HU966JMNKD5J7C"
 		},
 		{
+			"id": "50a2510d-1f77-467b-9029-7a89ef38f536",
 			"key": "team_id_click_up",
 			"value": "9015713790",
 			"type": "string"
 		},
 		{
+			"id": "2e26a71d-3055-476e-af28-2b54e348c65c",
 			"key": "key_result_id_click_up",
 			"value": "e4b6f4a3-489d-4505-b44d-64321e8d44be",
 			"type": "string"
 		},
 		{
+			"id": "faa0dcc2-5161-4750-a71e-318845268a9f",
 			"key": "goal_id_click_up",
 			"value": "a32b0385-b5b3-4299-a442-7d36a8616ee3",
 			"type": "string"
 		},
 		{
+			"id": "c0a42fdb-a010-4488-b041-623e915cbc16",
 			"key": "team_id_invalid",
 			"value": ""
 		},
 		{
+			"id": "6c32470b-bc37-4c99-9601-c3303935304d",
 			"key": "variable_key",
 			"value": ""
 		}
