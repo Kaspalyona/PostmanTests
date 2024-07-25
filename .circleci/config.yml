@@ -25,23 +25,18 @@ jobs:
             echo "Verifying Newman installation..."
             newman -v
       - run:
-          name: Run Postman collection with Newman
+          name: Verify Postman installation
           command: |
-            COLLECTION_PATH="Postman Collections/Click up.json"
-            REPORT_PATH="newman_report.html"
+            postman --version
+      - run:
+          name: Run Postman collection
+          command: |
+            COLLECTION_PATH="Postman Collections/ClickUp_Api_tests.json"
             if [ ! -f "$COLLECTION_PATH" ]; then
               echo "Collection file $COLLECTION_PATH does not exist"
               exit 1
             fi
-            echo "Running Newman collection..."
-            newman run "$COLLECTION_PATH" -r html --reporter-html-export "$REPORT_PATH"
-            NEWMAN_EXIT_CODE=$?
-            if [ $NEWMAN_EXIT_CODE -ne 0 ]; then
-              echo "Newman run failed with exit code $NEWMAN_EXIT_CODE"
-              exit 1
-            else
-              echo "Newman run successful, report generated at $REPORT_PATH"
-            fi
+            postman collection run "$COLLECTION_PATH"
 
 workflows:
   version: 2
