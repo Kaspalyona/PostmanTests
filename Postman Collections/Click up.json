@@ -537,47 +537,51 @@
 								{
 									"listen": "prerequest",
 									"script": {
+										"id": "800bb9d6-94b6-4331-a587-dd2c0bee506c",
 										"exec": [
 											"pm.sendRequest({",
-											"            url: pm.collectionVariables.get(\"api_click_up\") + \"/v2/team/\" + pm.collectionVariables.get(\"team_id_click_up\") + \"/space\",",
-											"            method: 'POST',",
-											"            header: {",
-											"                'Content-Type': 'application/json',",
-											"                'Authorization': pm.collectionVariables.get('auth_token_click_up')",
-											"            },",
-											"            body: {",
-											"                mode: 'raw',",
-											"                raw: JSON.stringify({",
-											"                    \"name\": pm.collectionVariables.get(\"space_name_exists\")",
-											"                }, function (err, response) {",
+											"    url: pm.collectionVariables.get(\"api_click_up\") + \"/v2/team/\" + pm.collectionVariables.get(\"team_id_click_up\") + \"/space\",",
+											"    method: 'POST',",
+											"    header: {",
+											"        'Content-Type': 'application/json',",
+											"        'Authorization': pm.collectionVariables.get('auth_token_click_up')",
+											"    },",
+											"    body: {",
+											"        mode: 'raw',",
+											"        raw: JSON.stringify({",
+											"            \"name\": \"Space\"",
+											"        })",
+											"    }",
+											"}, function (err, response) {",
 											"    if (err) {",
 											"        console.error(err);",
 											"    } else {",
 											"        var responseData = response.json();",
 											"        console.log(responseData);",
 											"    }",
-											"    }}",
-											"});"
+											"});",
+											""
 										],
 										"type": "text/javascript",
-										"packages": {},
-										"id": "800bb9d6-94b6-4331-a587-dd2c0bee506c"
+										"packages": {}
 									}
 								},
 								{
 									"listen": "test",
 									"script": {
+										"id": "68b1e87a-a215-4537-b6b2-ffbadf793e51",
 										"exec": [
 											"var responseData = pm.response.json();",
 											"",
 											"pm.test(\"Status code is 400\", function () {",
 											"    pm.response.to.have.status(400);",
 											"});",
-											""
+											"pm.test(\"Error is 'Space with this name already exists'\",function(){",
+											"    pm.expect(responseData.err).include(\"Space with this name already exists\")",
+											"})"
 										],
 										"type": "text/javascript",
-										"packages": {},
-										"id": "68b1e87a-a215-4537-b6b2-ffbadf793e51"
+										"packages": {}
 									}
 								}
 							],
@@ -599,7 +603,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "",
+									"raw": "{\n    \"name\": \"Space\",\n    \"multiple_assignees\": true,\n    \"features\": {\n      \"due_dates\": {\n        \"enabled\": true,\n        \"start_date\": false,\n        \"remap_due_dates\": true,\n        \"remap_closed_due_date\": false\n      },\n      \"time_tracking\": {\n        \"enabled\": false\n      },\n      \"tags\": {\n        \"enabled\": true\n      },\n      \"time_estimates\": {\n        \"enabled\": true\n      },\n      \"checklists\": {\n        \"enabled\": true\n      },\n      \"custom_fields\": {\n        \"enabled\": true\n      },\n      \"remap_dependencies\": {\n        \"enabled\": true\n      },\n      \"dependency_warning\": {\n        \"enabled\": true\n      },\n      \"portfolios\": {\n        \"enabled\": true\n      }\n    }\n  }",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1357,6 +1361,7 @@
 								{
 									"listen": "test",
 									"script": {
+										"id": "8eaa3d64-fa4b-4e6c-98ad-4d8c71db0bef",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {",
 											"    pm.response.to.have.status(200);",
@@ -1397,8 +1402,7 @@
 											"});"
 										],
 										"type": "text/javascript",
-										"packages": {},
-										"id": "8eaa3d64-fa4b-4e6c-98ad-4d8c71db0bef"
+										"packages": {}
 									}
 								}
 							],
@@ -1410,13 +1414,13 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{api_click_up}}v2/key_result/{key_result_id}",
+									"raw": "{{api_click_up}}v2/key_result/{{key_result_id_click_up}}",
 									"host": [
 										"{{api_click_up}}v2"
 									],
 									"path": [
 										"key_result",
-										"{key_result_id}"
+										"{{key_result_id_click_up}}"
 									]
 								}
 							},
