@@ -13,9 +13,26 @@ jobs:
             npm install -g newman
             npm install -g newman-reporter-html
       - run:
+          name: Verify Node.js and Newman installation
+          command: |
+            node -v
+            npm -v
+            newman -v
+      - run:
           name: Run Postman collection with Newman
           command: |
+            if [ ! -f "Postman Collections/ClickUp_Api_tests.json" ]; then
+              echo "Collection file does not exist"
+              exit 1
+            fi
             newman run "Postman Collections/ClickUp_Api_tests.json" -r html --reporter-html-export newman_report.html
+            NEWMAN_EXIT_CODE=$?
+            if [ $NEWMAN_EXIT_CODE -ne 0 ]; then
+              echo "Newman run failed with exit code $NEWMAN_EXIT_CODE"
+              exit 1
+            else
+              echo "Newman run successful, report generated at newman_report.html"
+            fi
 
 workflows:
   version: 2
