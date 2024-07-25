@@ -7,14 +7,22 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install Node.js and Newman
+          command: |
+            brew install node
+            npm install -g newman
+            npm install -g newman-reporter-html
+      - run:
           name: Install Postman CLI
           command: |
             curl -o- "https://dl-cli.pstmn.io/install/osx_64.sh" | sh
       - run:
           name: Login using your API key
           command: postman login --with-api-key $POSTMAN_API_KEY
-      - run: |
-            postman collection run "Postman Collections/ClickUp_Api_tests.json" --integration-id "166385-${CIRCLE_WORKFLOW_JOB_ID}"
+      - run:
+          name: Run Postman collection with Newman
+          command: |
+            newman run "Postman Collections/ClickUp_Api_tests.json" -r html --reporter-html-export newman_report.html
 
 workflows:
   version: 2
