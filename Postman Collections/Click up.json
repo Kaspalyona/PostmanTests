@@ -1689,56 +1689,56 @@
 	],
 	"variable": [
 		{
-			"id": "e885a95f-e99a-4a12-a825-c99818e90d6e",
+			"id": "4d4e5d0c-aaca-4688-a2c3-dc9d809a3393",
 			"key": "api_click_up",
 			"value": "https://api.clickup.com/api"
 		},
 		{
-			"id": "8ad7bc07-fbfb-4654-b951-1b0c6e09af17",
+			"id": "0d872aba-aca5-480e-ac60-a0647fdf4526",
 			"key": "auth_token_click_up",
 			"value": "pk_74545570_U9HXYVA5CWVZSOHLEDWJCV0IQFKEECEG"
 		},
 		{
-			"id": "6d648897-380e-4ecf-a4ee-5c17327a5f42",
+			"id": "40bf526b-b75c-4074-9819-1a935d14d6e0",
 			"key": "team_id_click_up",
 			"value": "9015765205",
 			"type": "string"
 		},
 		{
-			"id": "77f60ed4-ee2f-4c7b-9ea0-9980a21773ca",
+			"id": "9f46e812-5a92-458c-ac7d-cf1eb7341ddc",
 			"key": "key_result_id_click_up",
 			"value": "e4b6f4a3-489d-4505-b44d-64321e8d44be",
 			"type": "string"
 		},
 		{
-			"id": "c55065b2-30a7-4ea9-9f46-2dec9632eb63",
+			"id": "a995e984-e15a-4144-9d2f-c80499c3686e",
 			"key": "goal_id_click_up",
 			"value": "a32b0385-b5b3-4299-a442-7d36a8616ee3",
 			"type": "string"
 		},
 		{
-			"id": "ba957e45-ac2d-4f14-8905-19eca9835b51",
+			"id": "ef048dbc-6020-4bed-8513-25e51e051aef",
 			"key": "invalid_team_id",
 			"value": "hello",
 			"type": "string"
 		},
 		{
-			"id": "d1ab9f20-8898-4c8c-9563-f978f4de12ea",
+			"id": "66710db8-a1ae-4541-a4e1-e64798d22eee",
 			"key": "space_click_up",
 			"value": ""
 		},
 		{
-			"id": "4c51ee41-f49e-4191-8ce8-3e9c713c5772",
+			"id": "b21391e7-2e0b-47b8-bb90-d56acad21d7f",
 			"key": "space_id_click_up",
 			"value": ""
 		},
 		{
-			"id": "ff3138b3-f328-4d31-8f17-35d595aac982",
+			"id": "c3f94f4d-b47b-429c-a191-1531e447ce2e",
 			"key": "spaspace_id_click_up",
 			"value": ""
 		},
 		{
-			"id": "a2c97871-e02d-4270-a24d-4c127ef28136",
+			"id": "1ec597a0-06a7-4a2e-bd94-b83745cb342a",
 			"key": "space_name_exists",
 			"value": ""
 		}
