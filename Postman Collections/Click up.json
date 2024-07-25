@@ -1578,24 +1578,25 @@
 								{
 									"listen": "test",
 									"script": {
+										"id": "72108a5c-9087-4cf9-833e-67008e343f4e",
 										"exec": [
 											"var responseData = pm.response.json();",
 											"var goal = responseData.goal;",
 											"",
 											"",
-											"pm.test(\"Status code is 500\", function () {",
-											"    pm.response.to.have.status(500);",
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(403);",
 											"});",
 											""
 										],
 										"type": "text/javascript",
-										"packages": {},
-										"id": "72108a5c-9087-4cf9-833e-67008e343f4e"
+										"packages": {}
 									}
 								},
 								{
 									"listen": "prerequest",
 									"script": {
+										"id": "23148ea8-a577-4233-a59e-5263c8aa971d",
 										"exec": [
 											"// Перевірка на відправку з пустим полем, змінюєм в тілі значення name на null",
 											"var request = pm.request;",
@@ -1605,8 +1606,7 @@
 											""
 										],
 										"type": "text/javascript",
-										"packages": {},
-										"id": "23148ea8-a577-4233-a59e-5263c8aa971d"
+										"packages": {}
 									}
 								}
 							],
