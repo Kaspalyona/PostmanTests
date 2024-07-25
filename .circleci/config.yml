@@ -7,31 +7,43 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install Rosetta 2
+          command: |
+            /usr/sbin/softwareupdate --install-rosetta --agree-to-license
+      - run:
           name: Install Node.js and Newman
           command: |
-            brew install node
-            npm install -g newman
-            npm install -g newman-reporter-html
+            echo "Installing Node.js..."
+            arch -x86_64 brew install node
+            echo "Installing Newman..."
+            arch -x86_64 npm install -g newman
+            echo "Installing Newman HTML reporter..."
+            arch -x86_64 npm install -g newman-reporter-html
       - run:
           name: Verify Node.js and Newman installation
           command: |
+            echo "Verifying Node.js and npm installation..."
             node -v
             npm -v
+            echo "Verifying Newman installation..."
             newman -v
       - run:
           name: Run Postman collection with Newman
           command: |
-            if [ ! -f "Postman Collections/ClickUp_Api_tests.json" ]; then
-              echo "Collection file does not exist"
+            COLLECTION_PATH="Postman Collections/ClickUp_Api_tests.json"
+            REPORT_PATH="newman_report.html"
+            if [ ! -f "$COLLECTION_PATH" ]; then
+              echo "Collection file $COLLECTION_PATH does not exist"
               exit 1
             fi
-            newman run "Postman Collections/ClickUp_Api_tests.json" -r html --reporter-html-export newman_report.html
+            echo "Running Newman collection..."
+            newman run "$COLLECTION_PATH" -r html --reporter-html-export "$REPORT_PATH"
             NEWMAN_EXIT_CODE=$?
             if [ $NEWMAN_EXIT_CODE -ne 0 ]; then
               echo "Newman run failed with exit code $NEWMAN_EXIT_CODE"
               exit 1
             else
-              echo "Newman run successful, report generated at newman_report.html"
+              echo "Newman run successful, report generated at $REPORT_PATH"
             fi
 
 workflows:
