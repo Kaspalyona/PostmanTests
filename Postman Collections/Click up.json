@@ -1667,7 +1667,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "4b08f36b-00bb-4f3c-bca9-b8ddc93c51ad",
+				"id": "b9361b80-e162-4f0a-bf3e-6db00e311d45",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1678,7 +1678,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "1ceba3c7-2955-4e25-87ee-d4305ccd4da4",
+				"id": "909ee81e-5f7f-4976-9106-6afc195b1d52",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1689,56 +1689,56 @@
 	],
 	"variable": [
 		{
-			"id": "4d4e5d0c-aaca-4688-a2c3-dc9d809a3393",
+			"id": "a9e9f088-4122-4b7b-892a-426f5aa80384",
 			"key": "api_click_up",
 			"value": "https://api.clickup.com/api"
 		},
 		{
-			"id": "0d872aba-aca5-480e-ac60-a0647fdf4526",
+			"id": "14c29fd7-466c-44c6-8d9e-7af7c6fb3cd0",
 			"key": "auth_token_click_up",
-			"value": "pk_74545570_U9HXYVA5CWVZSOHLEDWJCV0IQFKEECEG"
+			"value": "pk_50198468_VWZL7JX1TFSHVP9RFOI70FCRGCAR0OTR"
 		},
 		{
-			"id": "40bf526b-b75c-4074-9819-1a935d14d6e0",
+			"id": "d0ba3e65-243a-43f1-ae0c-550f4cef60c2",
 			"key": "team_id_click_up",
-			"value": "9015765205",
+			"value": "9015750895",
 			"type": "string"
 		},
 		{
-			"id": "9f46e812-5a92-458c-ac7d-cf1eb7341ddc",
+			"id": "9708c798-48af-4cf7-904b-249cc68e0ce1",
 			"key": "key_result_id_click_up",
 			"value": "e4b6f4a3-489d-4505-b44d-64321e8d44be",
 			"type": "string"
 		},
 		{
-			"id": "a995e984-e15a-4144-9d2f-c80499c3686e",
+			"id": "d200fbdc-be64-44e8-a034-14f9ce3fe9e5",
 			"key": "goal_id_click_up",
 			"value": "a32b0385-b5b3-4299-a442-7d36a8616ee3",
 			"type": "string"
 		},
 		{
-			"id": "ef048dbc-6020-4bed-8513-25e51e051aef",
+			"id": "9cc4fd7f-50e5-436b-9ff6-8ed9788c6822",
 			"key": "invalid_team_id",
 			"value": "hello",
 			"type": "string"
 		},
 		{
-			"id": "66710db8-a1ae-4541-a4e1-e64798d22eee",
+			"id": "430fe99f-d3c2-405c-bcfa-0ead674b7975",
 			"key": "space_click_up",
 			"value": ""
 		},
 		{
-			"id": "b21391e7-2e0b-47b8-bb90-d56acad21d7f",
+			"id": "913a938e-c8ff-45bd-8c2a-786dd780e0c7",
 			"key": "space_id_click_up",
 			"value": ""
 		},
 		{
-			"id": "c3f94f4d-b47b-429c-a191-1531e447ce2e",
+			"id": "014faa01-59f7-4afd-99f1-495b6c18b316",
 			"key": "spaspace_id_click_up",
 			"value": ""
 		},
 		{
-			"id": "1ec597a0-06a7-4a2e-bd94-b83745cb342a",
+			"id": "5b3b1f5a-06cc-4cc8-b4e7-5a9cf1cd57b8",
 			"key": "space_name_exists",
 			"value": ""
 		}
