@@ -27,7 +27,7 @@ jobs:
       - run:
           name: Run Postman collection with Newman
           command: |
-            COLLECTION_PATH="Postman Collections/ClickUp_Api_tests.json"
+            COLLECTION_PATH="Postman Collections/Click up.json"
             REPORT_PATH="newman_report.html"
             if [ ! -f "$COLLECTION_PATH" ]; then
               echo "Collection file $COLLECTION_PATH does not exist"
